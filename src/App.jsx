@@ -143,12 +143,15 @@ export default function App() {
       <div style={{ borderBottom: "1px solid #22223a", background: "#13131a", position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(10px)" }}>
         <div style={{ maxWidth: 820, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 0" }}>
-            <div style={{ width: 32, height: 32, borderRadius: 8, background: "linear-gradient(135deg, #a855f7, #ec4899)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 2L10 6H14L11 9L12 13L8 11L4 13L5 9L2 6H6L8 2Z" fill="white"/>
+            <div style={{ width: 34, height: 34, borderRadius: 9, background: "linear-gradient(135deg, #a855f7, #ec4899)", display: "flex", alignItems: "center", justifyContent: "center", gap: 2 }}>
+              <svg width="18" height="16" viewBox="0 0 18 16" fill="none">
+                <rect x="1" y="7" width="3" height="7" rx="1.5" fill="white"/>
+                <rect x="6" y="3" width="3" height="11" rx="1.5" fill="white"/>
+                <rect x="11" y="5" width="3" height="8" rx="1.5" fill="white"/>
+                <rect x="16" y="9" width="2" height="5" rx="1" fill="white" opacity="0.6"/>
               </svg>
             </div>
-            <span style={{ fontSize: 20, fontWeight: 700, color: "#fff", letterSpacing: "-0.03em" }}>stake</span>
+            <span style={{ fontSize: 20, fontWeight: 800, color: "#fff", letterSpacing: "-0.04em" }}>rite</span>
           </div>
           <div style={{ display: "flex", gap: 0 }}>
             {[["fan", "Community"], ["producer", "Dashboard"], ["settlement", "Scenarios"]].map(([id, label]) => (
@@ -335,7 +338,7 @@ export default function App() {
                 {[
                   { label: "MRR", value: `$${mrr.toLocaleString()}` },
                   { label: "ARR", value: `$${arr.toLocaleString()}` },
-                  { label: "Stake Fee", value: "8%", highlight: true },
+                  { label: "Rite Fee", value: "8%", highlight: true },
                 ].map((s, i) => (
                   <div key={i} style={{ textAlign: "center", padding: "16px", background: "#22223a", borderRadius: 10 }}>
                     <p style={{ fontSize: 10, color: "#5050a0", marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700 }}>{s.label}</p>
@@ -412,7 +415,7 @@ function ScenarioBlock({ scenario, members, mrr }) {
         { label: `${members} active members`, action: "Monthly billing active", detail: `$${mrr.toLocaleString()} MRR` },
         { label: "Events", action: "Regular monthly events booked", detail: "All confirmed" },
         { label: "Churn", action: "2.1% monthly", detail: "Below industry average" },
-        { label: "Stake fee", action: "8% on revenue", detail: `$${Math.round(mrr * 0.08).toLocaleString()}/month` },
+        { label: "Rite fee", action: "8% on revenue", detail: `$${Math.round(mrr * 0.08).toLocaleString()}/month` },
       ],
     },
     paused: {
@@ -422,8 +425,8 @@ function ScenarioBlock({ scenario, members, mrr }) {
       rows: [
         { label: `${members} members`, action: "Billing frozen", detail: "No charges during hiatus" },
         { label: "Access", action: "Maintained during pause", detail: "Auto-resumes when events restart" },
-        { label: "Communication", action: "Announce restart date", detail: "Stake emails your community" },
-        { label: "Stake fee", action: "Zero during pause", detail: "No fees on frozen memberships" },
+        { label: "Communication", action: "Announce restart date", detail: "Rite emails your community" },
+        { label: "Rite fee", action: "Zero during pause", detail: "No fees on frozen memberships" },
       ],
     },
     ended: {
@@ -433,8 +436,8 @@ function ScenarioBlock({ scenario, members, mrr }) {
       rows: [
         { label: `${members} members`, action: "Pro-rata refunds processed", detail: `~$${Math.round(mrr * 0.5).toLocaleString()} returned` },
         { label: "Timeline", action: "5 business days", detail: "Automatic via Stripe" },
-        { label: "Stake fee", action: "No fee on refunds", detail: "You only pay for events held" },
-        { label: "Community", action: "Farewell email sent", detail: "Stake handles all messaging" },
+        { label: "Rite fee", action: "No fee on refunds", detail: "You only pay for events held" },
+        { label: "Community", action: "Farewell email sent", detail: "Rite handles all messaging" },
       ],
     },
   };
